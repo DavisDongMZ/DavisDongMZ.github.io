@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mingzhi | Personal Site</title>
+
+    <!-- 等宽字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0b0d10;
+            --fg: #d1f7ff;
+            --accent: #00ff9c;
+            --dim: #6b7280;
+            --border: rgba(0, 255, 156, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "JetBrains Mono", monospace;
+            background: radial-gradient(circle at top, #0f172a 0%, var(--bg) 60%);
+            color: var(--fg);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-shadow: 0 0 8px var(--accent);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        /* 终端头部 */
+        .terminal-header {
+            border: 1px solid var(--border);
+            padding: 24px;
+            margin-bottom: 48px;
+            box-shadow: 0 0 40px rgba(0, 255, 156, 0.08);
+        }
+
+        .prompt {
+            color: var(--accent);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            background: var(--accent);
+            margin-left: 4px;
+            animation: blink 1s steps(1) infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        h1 {
+            font-size: 28px;
+            margin: 0 0 8px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        section {
+            margin-bottom: 48px;
+            padding-left: 16px;
+            border-left: 2px solid var(--border);
+        }
+
+        .command {
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .list li {
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            margin-top: 80px;
+            color: var(--dim);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- 终端风格头部 -->
+    <div class="terminal-header">
+        <div class="prompt">$ whoami</div>
+        <h1>Mingzhi Dong<span class="cursor"></span></h1>
+        <div class="prompt">$ location</div>
+        <div>Toronto, Canada</div>
+    </div>
+
+    <!-- About -->
+    <section>
+        <div class="command">$ cat about.txt</div>
+        <p>
+            CS student @ University of Toronto.  
+            Interested in <b>distributed systems</b>, <b>databases</b>, and <b>high-performance backend</b>.
+        </p>
+    </section>
+
+    <!-- Projects -->
+    <section>
+        <div class="command">$ ls projects/</div>
+        <ul class="list">
+            <li>kvdb — LSM-tree based key-value store (C++)</li>
+            <li>r/place — high-concurrency collaborative canvas (AWS)</li>
+            <li>distributed-chat — scalable messaging system</li>
+        </ul>
+    </section>
+
+    <!-- Skills -->
+    <section>
+        <div class="command">$ cat skills.json</div>
+        <ul class="list">
+            <li>Languages: C++, Go, Python, JavaScript</li>
+            <li>Systems: Linux, Docker, AWS, Redis</li>
+            <li>Topics: DB internals, concurrency, system design</li>
+        </ul>
+    </section>
+
+    <!-- Contact -->
+    <section>
+        <div class="command">$ echo $CONTACT</div>
+        <p>
+            GitHub: <a href="https://github.com/yourname" target="_blank">github.com/yourname</a><br/>
+            Email: mingzhi@example.com
+        </p>
+    </section>
+
+    <div class="footer">
+        © 2025 Mingzhi · Built like a terminal
+    </div>
+
+</div>
+
+</body>
+</html>
+
